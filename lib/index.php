@@ -16,7 +16,7 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-  <link rel="icon" href="http://f0424029.xsph.ru/logo1orig.png" sizes="32x32">
+  <link rel="icon" href="<?php echo $url;  ?>/logo1orig.png" sizes="32x32">
 
 
     <!--Import Google Icon Font-->
@@ -25,11 +25,11 @@ session_start();
 
 
      <!-- CSS-->
-    <link href="http://f0424029.xsph.ru/css/prism.css" rel="stylesheet">
-    <link href="http://f0424029.xsph.ru/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?php echo $url;  ?>/css/prism.css" rel="stylesheet">
+    <link href="<?php echo $url;  ?>/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
    
-    <link href="http://f0424029.xsph.ru/css/css.css" rel="stylesheet" type="text/css">
-    <link href="http://f0424029.xsph.ru/css/icon.css" rel="stylesheet">
+    <link href="<?php echo $url;  ?>/css/css.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo $url;  ?>/css/icon.css" rel="stylesheet">
      <title>Редактор глав</title>
     </head>
     
@@ -417,14 +417,14 @@ session_start();
         
          <!--  Scripts-->
     
-    <script async="" type="text/javascript" src="http://f0424029.xsph.ru/js/carbon.js"></script>
-    <script src="http://f0424029.xsph.ru/js/jquery-3.2.1.min.js"></script>
-    <script src="http://f0424029.xsph.ru/js/jquery.timeago.min.js"></script>
-    <script src="http://f0424029.xsph.ru/js/prism.js"></script>
-    <script src="http://f0424029.xsph.ru/js/lunr.min.js"></script>
-    <script src="http://f0424029.xsph.ru/js/search.js"></script>
-    <script src="http://f0424029.xsph.ru/js/materialize.js"></script>
-    <script src="http://f0424029.xsph.ru/js/init.js"></script>
+    <script async="" type="text/javascript" src="<?php echo $url;  ?>/js/carbon.js"></script>
+    <script src="<?php echo $url;  ?>/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo $url;  ?>/js/jquery.timeago.min.js"></script>
+    <script src="<?php echo $url;  ?>/js/prism.js"></script>
+    <script src="<?php echo $url;  ?>/js/lunr.min.js"></script>
+    <script src="<?php echo $url;  ?>/js/search.js"></script>
+    <script src="<?php echo $url;  ?>/js/materialize.js"></script>
+    <script src="<?php echo $url;  ?>/js/init.js"></script>
    
   
 
