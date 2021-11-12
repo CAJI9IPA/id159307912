@@ -1,6 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <?php
+
 include_once '../connect.php';
 session_start();
  $color= array("red","pink","purple","deep-purple","indigo","blue","green","lime","yellow","deep-orange","brown");

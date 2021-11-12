@@ -1,8 +1,11 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <?php
 include_once '../connect.php';
-session_start();
+
  $profile_login=$_SESSION['login'];
  $profile_query=mysqli_query($con,"SELECT * FROM `users` WHERE `login`='$profile_login'");
  $profile_data=(mysqli_fetch_assoc($profile_query));

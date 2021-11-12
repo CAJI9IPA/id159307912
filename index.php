@@ -1,8 +1,11 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <?php
 include_once 'connect.php';
-session_start();
+
 
 ?>
 <head>

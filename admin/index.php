@@ -1,8 +1,11 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <?php
 include_once '../connect.php';
-session_start();
+
 
                 $profile_login=$_SESSION['login'];
                 $profile_query=mysqli_query($con,"SELECT * FROM `users` WHERE `login`='$profile_login'");
@@ -25,8 +28,8 @@ session_start();
 
 
      <!-- CSS-->
-    <link href="<?php echo $url;  ?>/css/prism.css" rel="stylesheet">
-    <link href="<?php echo $url;  ?>/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?= $url;  ?>/css/prism.css" rel="stylesheet">
+    <link href="<?= $url;  ?>/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
    
     <link href="<?php echo $url;  ?>/css/css.css" rel="stylesheet" type="text/css">
     <link href="<?php echo $url;  ?>/css/icon.css" rel="stylesheet">

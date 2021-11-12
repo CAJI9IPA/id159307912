@@ -1,8 +1,47 @@
+<?php
+session_start();
+include_once '../connect.php';
+
+if(isset($_SESSION['login'])){
+    header('Location: /');
+}
+
+
+if(isset($_POST['login']) && isset($_POST['password'])){
+   
+    $login=mysqli_real_escape_string($con,$_POST['login']);
+    
+    $password=md5(md5($_POST['password']));
+    
+    $query="SELECT * FROM `users` WHERE login='$login' and password='$password'";
+    $result=mysqli_query($con,$query) or die(mysqli_error($con));
+    $count=mysqli_num_rows($result);
+
+    if($count) {
+        $log="Пользователь онлайн";
+        $queryl="INSERT INTO `logs` (log,login) VALUES ('$log','$login')";
+        $resultlog=mysqli_query($con,$queryl);
+        $_SESSION['login']=$login;
+        $_SESSION['online']=1;
+        $profile=mysqli_fetch_assoc($result);
+        $_SESSION['lvl']=$profile['lvl'];
+        header('Location: /');
+    } else {
+        $fmsg = "Ошибка. Не верный логин или пароль.";
+    }
+   
+   
+
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-include_once '../connect.php';
-session_start();
+
+
 
  $color= array("red","pink","purple","deep-purple","indigo","blue","green","lime","yellow","deep-orange","brown");
     $rc=rand(0,11);              
@@ -39,41 +78,7 @@ session_start();
      <h1 class="header"> Вход</h1>
      <div class="card-panel <? echo $color[$rc] ?> lighten-5">
          
-        <?php 
-
-     if(isset($_SESSION['login'])){
-        header('Location: /');
-    }
-    if(isset($_POST['login']) && isset($_POST['password'])){
        
-        $login=mysqli_real_escape_string($con,$_POST['login']);
-        
-        $password=md5(md5($_POST['password']));
-        
-        $query="SELECT * FROM `users` WHERE login='$login' and password='$password'";
-        $result=mysqli_query($con,$query) or die(mysqli_error($con));
-        $count=mysqli_num_rows($result);
-
-        if($count) {
-            $log="Пользователь онлайн";
-            $queryl="INSERT INTO `logs` (log,login) VALUES ('$log','$login')";
-            $resultlog=mysqli_query($con,$queryl);
-            $_SESSION['login']=$login;
-            $_SESSION['online']=1;
-            $profile=mysqli_fetch_assoc($result);
-            $_SESSION['lvl']=$profile['lvl'];
-            header('Location: /');
-        } else {
-            $fmsg = "Ошибка. Не верный логин или пароль.";
-        }
-       
-       
-
-
-    }
-
-    
-    ?>
 <form class="form-signing" method="POST">
        <? echo $fmsg; ?>
         <div class="input-field">
